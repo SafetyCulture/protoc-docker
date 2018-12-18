@@ -30,6 +30,7 @@ go get -u github.com/golang/protobuf/protoc-gen-go
 go get -u github.com/gogo/protobuf/protoc-gen-gogo
 
 go get -u github.com/SafetyCulture/s12-proto/protobuf/protoc-gen-govalidator
+go get -u github.com/SafetyCulture/s12-proto/protobuf/protoc-gen-logger
 go get -u github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway
 go get -u github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger
 go get -u github.com/pseudomuto/protoc-gen-doc/cmd/protoc-gen-doc
