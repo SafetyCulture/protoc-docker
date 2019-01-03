@@ -13,7 +13,7 @@ mkdir -p /usr/local/grpc-web
 git clone https://github.com/SafetyCulture/grpc-web.git /usr/local/grpc-web
 cd /usr/local/grpc-web
 # git checkout $GRPC_WEB_RELEASE
-git checkout typescript-enums
+git checkout es5-functions
 make install-plugin
 
 apk del .build
