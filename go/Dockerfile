@@ -1,7 +1,7 @@
 FROM safetyculture/protoc
 LABEL maintainer="SafetyCulture <info@safetyculture.io>"
 
-ENV GOLANG_VERSION 1.9
+ENV GOLANG_VERSION 1.11
 ENV GOPATH /go
 ENV PATH $GOPATH/bin:/usr/local/go/bin:$PATH
 
