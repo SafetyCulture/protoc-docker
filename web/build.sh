@@ -13,7 +13,7 @@ mkdir -p /usr/local/grpc-web
 git clone https://github.com/SafetyCulture/grpc-web.git /usr/local/grpc-web
 cd /usr/local/grpc-web
 # git checkout $GRPC_WEB_RELEASE
-git checkout 1.0.4-beta
+git checkout PLT-78-enum-imports
 make install-plugin
 
 apk del .build
