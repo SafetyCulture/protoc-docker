@@ -1,7 +1,7 @@
 FROM alpine:3.6
 LABEL maintainer="SafetyCulture <info@safetyculture.io>"
 
-ENV PROTOC_VERSION 3.5.1
+ENV PROTOC_VERSION 3.7.1
 
 # install dependencies and build/install protoc
 ADD . /src
