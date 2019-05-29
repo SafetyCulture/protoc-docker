@@ -11,7 +11,6 @@ tar -C /usr/local -xzf go.tgz
 rm go.tgz
 
 cd /usr/local/go/src
-
 ./make.bash
 
 mkdir -p "$GOPATH/src" "$GOPATH/bin" && chmod -R 777 "$GOPATH"
@@ -26,7 +25,7 @@ go get -u github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway
 go get -u github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger
 go get -u github.com/pseudomuto/protoc-gen-doc/cmd/protoc-gen-doc
 
-rm -rf /go-alpine-patches
+rm -rf $GOPATH/pkg/mod
 apk del .go_build
 
 go version
