@@ -11,10 +11,6 @@ tar -C /usr/local -xzf go.tgz
 rm go.tgz
 
 cd /usr/local/go/src
-# for p in /go-alpine-patches/*.patch; do
-#   [ -f "$p" ] || continue
-#   patch -p2 -i "$p"
-# done
 
 ./make.bash
 
