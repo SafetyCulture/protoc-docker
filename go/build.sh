@@ -19,8 +19,9 @@ export GO111MODULE=on
 go get -u github.com/golang/protobuf/protoc-gen-go
 go get -u github.com/gogo/protobuf/protoc-gen-gogo
 
-go get -u github.com/SafetyCulture/s12-proto/protobuf/protoc-gen-govalidator@v1.2.0
-go get -u github.com/SafetyCulture/s12-proto/protobuf/protoc-gen-logger@v1.2.0
+go get -u github.com/SafetyCulture/s12-proto/protobuf/protoc-gen-govalidator@v1.3.0
+go get -u github.com/SafetyCulture/s12-proto/protobuf/protoc-gen-logger@v1.3.0
+go get -u github.com/SafetyCulture/s12-proto/protobuf/protoc-gen-gogrpcmock@v1.3.0
 go get -u github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway
 go get -u github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger
 go get -u github.com/pseudomuto/protoc-gen-doc/cmd/protoc-gen-doc
