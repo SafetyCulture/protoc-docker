@@ -21,9 +21,9 @@ export GOPROXY=https://proxy.golang.org
 go get -u github.com/golang/protobuf/protoc-gen-go
 go get github.com/gogo/protobuf/protoc-gen-gogo@v1.2.0
 
-go get github.com/SafetyCulture/s12-proto/protobuf/protoc-gen-govalidator@v1.7.0
-go get github.com/SafetyCulture/s12-proto/protobuf/protoc-gen-logger@v1.7.0
-go get github.com/SafetyCulture/s12-proto/protobuf/protoc-gen-gogrpcmock@v1.7.0
+go get github.com/SafetyCulture/s12-proto/protobuf/protoc-gen-govalidator@v$S12_PROTO_VERSION
+go get github.com/SafetyCulture/s12-proto/protobuf/protoc-gen-logger@v$S12_PROTO_VERSION
+go get github.com/SafetyCulture/s12-proto/protobuf/protoc-gen-gogrpcmock@v$S12_PROTO_VERSION
 go get -u github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway
 go get -u github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger
 go get -u github.com/pseudomuto/protoc-gen-doc/cmd/protoc-gen-doc
