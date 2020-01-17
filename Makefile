@@ -3,7 +3,7 @@ default: help
 
 .PHONY: cpp
 cpp: ## Builds the protoc docker container for `cpp`
-	$(call build,$(CPP_DIR))
+	$(call build,cpp)
 
 .PHONY: go
 go: ## Builds the protoc docker container for `go`
