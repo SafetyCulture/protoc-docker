@@ -7,7 +7,7 @@ This repository contains Dockerfiles that build protocol buffer generation scrip
 #### What to run
 
 Before invoking a target,
-- update the version in version.txt. This version will be used to tag the new docker image.
+- update the version in xxx/version.txt. This version will be used to tag the new docker image.
 - update the relevant version info in the Dockerfile for the respective language.
 - run the make target for the language in the previous step. The `Makefile` contains targets for the following languages
 ```
