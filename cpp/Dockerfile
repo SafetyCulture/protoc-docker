@@ -2,7 +2,7 @@ FROM safetyculture/protoc:1.3.0
 LABEL maintainer="SafetyCulture <info@safetyculture.io>"
 
 ENV GRPC_RELEASE 1.20.1
-ENV CRUX_CLIENT_RELEASE 1.9.8
+ENV CRUX_CLIENT_RELEASE 1.9.9
 
 # install dependencies and build/install grpc plugin
 ADD . /src
