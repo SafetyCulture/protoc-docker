@@ -18,7 +18,10 @@ mkdir -p "$GOPATH/src" "$GOPATH/bin" && chmod -R 777 "$GOPATH"
 export GO111MODULE=on
 export GOPROXY=https://proxy.golang.org
 
-go get -u github.com/golang/protobuf/protoc-gen-go
+go get -u google.golang.org/protobuf/cmd/protoc-gen-go
+go get -u google.golang.org/grpc/cmd/protoc-gen-go-grpc
+
+# Deprecated use APIv2 instead; will be removed in future versions
 go get github.com/gogo/protobuf/protoc-gen-gogo@v1.2.0
 
 go get github.com/SafetyCulture/s12-proto/protobuf/protoc-gen-govalidator@v$S12_PROTO_VERSION
