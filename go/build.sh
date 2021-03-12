@@ -15,22 +15,15 @@ cd /usr/local/go/src
 
 mkdir -p "$GOPATH/src" "$GOPATH/bin" && chmod -R 777 "$GOPATH"
 
-export GO111MODULE=on
-export GOPROXY=https://proxy.golang.org
-
-go get -u google.golang.org/protobuf/cmd/protoc-gen-go
-go get -u google.golang.org/grpc/cmd/protoc-gen-go-grpc
-
-# Deprecated use APIv2 instead; will be removed in future versions
-go get github.com/gogo/protobuf/protoc-gen-gogo@v1.2.0
+go get google.golang.org/protobuf/cmd/protoc-gen-go
+go get google.golang.org/grpc/cmd/protoc-gen-go-grpc
+go get github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-grpc-gateway
+go get github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-openapiv2
 
 go get github.com/SafetyCulture/s12-proto/protobuf/protoc-gen-govalidator@v$S12_PROTO_VERSION
-go get github.com/SafetyCulture/s12-proto/protobuf/protoc-gen-logger@v$S12_PROTO_VERSION
-go get github.com/SafetyCulture/s12-proto/protobuf/protoc-gen-gogrpcmock@v$S12_PROTO_VERSION
 go get github.com/SafetyCulture/s12-proto/protobuf/protoc-gen-s12perm@v$S12_PROTO_VERSION
-go get -u github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway
-go get -u github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger
-go get -u github.com/pseudomuto/protoc-gen-doc/cmd/protoc-gen-doc
+
+go get github.com/pseudomuto/protoc-gen-doc/cmd/protoc-gen-doc
 
 rm -rf $GOPATH/pkg/mod
 apk del .go_build
