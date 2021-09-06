@@ -13,17 +13,16 @@ rm go.tgz
 cd /usr/local/go/src
 ./make.bash
 
-mkdir -p "$GOPATH/src" "$GOPATH/bin" && chmod -R 777 "$GOPATH"
+go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
+go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
+go install github.com/planetscale/vtprotobuf/cmd/protoc-gen-go-vtproto@latest
+go install github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-grpc-gateway@latest
+go install github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-openapiv2@latest
 
-go get google.golang.org/protobuf/cmd/protoc-gen-go
-go get google.golang.org/grpc/cmd/protoc-gen-go-grpc
-go get github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-grpc-gateway
-go get github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-openapiv2
+go install github.com/SafetyCulture/s12-proto/protobuf/protoc-gen-govalidator@v$S12_PROTO_VERSION
+go install github.com/SafetyCulture/s12-proto/protobuf/protoc-gen-s12perm@v$S12_PROTO_VERSION
 
-go get github.com/SafetyCulture/s12-proto/protobuf/protoc-gen-govalidator@v$S12_PROTO_VERSION
-go get github.com/SafetyCulture/s12-proto/protobuf/protoc-gen-s12perm@v$S12_PROTO_VERSION
-
-go get github.com/pseudomuto/protoc-gen-doc/cmd/protoc-gen-doc
+go install github.com/pseudomuto/protoc-gen-doc/cmd/protoc-gen-doc@latest
 
 rm -rf $GOPATH/pkg/mod
 apk del .go_build
