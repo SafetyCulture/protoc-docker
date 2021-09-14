@@ -11,8 +11,13 @@ git clone https://github.com/grpc/grpc.git /usr/local/grpc
 cd /usr/local/grpc
 git checkout v$GRPC_RELEASE
 git submodule update --init
+cmake \
+  -DCMAKE_BUILD_TYPE=Release \
+  -DgRPC_INSTALL=ON \
+  -DgRPC_BUILD_TESTS=OFF \
+  ./
 make grpc_cpp_plugin
-mv /usr/local/grpc/bins/opt/grpc_cpp_plugin  /usr/local/bin/grpc_cpp_plugin
+mv /usr/local/grpc/grpc_cpp_plugin  /usr/local/bin/grpc_cpp_plugin
 
 # Install the protoc-gen-cruxclient plugin
 mkdir -p /usr/local/cruxclient
