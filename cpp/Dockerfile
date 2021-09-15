@@ -1,4 +1,4 @@
-FROM safetyculture/protoc:1.5.0
+FROM safetyculture/protoc:1.6.0
 LABEL maintainer="SafetyCulture <info@safetyculture.io>"
 
 ENV GRPC_RELEASE 1.40.0
