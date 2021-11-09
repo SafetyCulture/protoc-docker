@@ -23,4 +23,4 @@ swift          Builds the protoc docker container for `swift`
 web            Builds the protoc docker container for `web`
 ```
 
-After a docker image has been created, push it to SC docker repository using `docker push <image-name>`; for e.g., `docker push safetyculture/protoc-go:2.4.1` or you can use `make push language=go`
+After a docker image has been created, push it to SC docker repository using `docker push <image-name>`; for e.g., `docker push safetyculture/protoc-go:2.4.1` or you can use `make push language=go`. Please note that one must be signed in in order to push the image to SC docker repository.
