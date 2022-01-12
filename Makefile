@@ -29,7 +29,7 @@ REGISTRY=safetyculture
 BASE_IMAGE=protoc
 
 .PHONY: build
-build = echo "Building Docker container $(1)"; docker build -t $(REGISTRY)/$(BASE_IMAGE)-$(1):$(shell cat $(1)/version.txt) ./$(1)
+build = echo "Building Docker container $(1)"; docker build --no-cache -t $(REGISTRY)/$(BASE_IMAGE)-$(1):$(shell cat $(1)/version.txt) ./$(1)
 
 .PHONY: push
 push: ## Push the generated docker image to SC docker repository
