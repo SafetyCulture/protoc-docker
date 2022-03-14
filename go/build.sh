@@ -16,6 +16,7 @@ cd /usr/local/go/src
 go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
 go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
 go install github.com/planetscale/vtprotobuf/cmd/protoc-gen-go-vtproto@latest
+
 # Includes HTTP Pattern fix that is in main branch but yet to be included in a release
 # Once included we can revert back to using @latest or better still @2.x
 go install github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-grpc-gateway@c0ecb42
@@ -27,6 +28,12 @@ go install github.com/SafetyCulture/protoc-gen-ratelimit/cmd/protoc-gen-ratelimi
 go install github.com/SafetyCulture/protoc-gen-workato/cmd/protoc-gen-workato@latest
 
 go install github.com/pseudomuto/protoc-gen-doc/cmd/protoc-gen-doc@latest
+
+# This is a fork, and go install hates forks...
+curl -o grpc-gateway.tar.gz -L https://github.com/SafetyCulture/grpc-gateway/archive/refs/heads/sc-main.tar.gz
+tar -xzf grpc-gateway.tar.gz
+cd grpc-gateway-sc-main/
+go install ./protoc-gen-openapiv2
 
 rm -rf $GOPATH/pkg/mod
 apk del .go_build
