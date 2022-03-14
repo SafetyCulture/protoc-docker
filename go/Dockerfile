@@ -1,8 +1,8 @@
-FROM safetyculture/protoc
+FROM safetyculture/protoc:1.11.0
 LABEL maintainer="SafetyCulture <info@safetyculture.io>"
 
-ENV GOLANG_VERSION 1.17
-ENV GOLANG_CHECKSUM 3a70e5055509f347c0fb831ca07a2bf3b531068f349b14a3c652e9b5b67beb5d
+ENV GOLANG_VERSION 1.17.8
+ENV GOLANG_CHECKSUM 2effcd898140da79a061f3784ca4f8d8b13d811fb2abe9dad2404442dabbdf7a
 ENV GOPATH /go
 ENV PATH $GOPATH/bin:/usr/local/go/bin:$PATH
 ENV S12_PROTO_VERSION 1.19.0
