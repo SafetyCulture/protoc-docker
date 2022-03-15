@@ -1,4 +1,4 @@
-FROM safetyculture/protoc:1.11.0
+FROM safetyculture/protoc:1.11.2
 LABEL maintainer="SafetyCulture <info@safetyculture.io>"
 
 ENV GOLANG_VERSION 1.17.8
