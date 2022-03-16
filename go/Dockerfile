@@ -7,6 +7,8 @@ ENV GOPATH /go
 ENV PATH $GOPATH/bin:/usr/local/go/bin:$PATH
 ENV S12_PROTO_VERSION 1.19.0
 
+COPY --from=golang:1.17.8-alpine /usr/local/go/ /usr/local/go/
+
 # install dependencies and build/install Go
 ADD . /src
 RUN /src/build.sh
