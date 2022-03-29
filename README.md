@@ -10,7 +10,12 @@ Before invoking a target,
 
 - update the version in xxx/version.txt. This version will be used to tag the new docker image.
 - update the relevant version info in the Dockerfile for the respective language.
-- run the make target for the language in the previous step. The `Makefile` contains targets for the following languages
+- trigger a new build https://github.com/SafetyCulture/protoc-docker/actions/workflows/build-protoc.yml and select the image you want to build.
+If `Create release tag` is unselected the image will be tagged with `${version}-pre#{datetime}`.
+
+![docs/example.png](docs/example.png)
+
+Alternatively you can manaully build and publish these images by running the following make commands.
 
 ```txt
 buildAll       Generates all the protoc docker containers
