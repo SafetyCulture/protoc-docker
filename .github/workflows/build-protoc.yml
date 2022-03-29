@@ -1,0 +1,24 @@
+# yamllint disable rule:line-length
+---
+name: Build protoc
+
+# yamllint disable-line rule:truthy
+on:
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        description: 'Create release tag'
+        required: false
+        type: boolean
+
+jobs:
+  protoc:
+    runs-on: ubuntu-latest
+    permissions:
+      packages: write
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
