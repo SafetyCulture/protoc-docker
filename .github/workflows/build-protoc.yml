@@ -6,6 +6,19 @@ name: Build protoc
 on:
   workflow_dispatch:
     inputs:
+      image:
+        type: choice
+        description: Image
+        required: true
+        default: 'protoc'
+        options:
+          - protoc
+          - protoc-cpp
+          - protoc-go
+          - protoc-java
+          - protoc-node
+          - protoc-swift
+          - protoc-web
       release_tag:
         description: 'Create release tag'
         required: false
@@ -44,4 +57,5 @@ jobs:
       - name: Build and Publish
         env:
           RELEASE_TAG: ${{ github.event.inputs.release_tag }}
+          IMAGE: ${{ github.event.inputs.image }}
         run: ./publish.sh
