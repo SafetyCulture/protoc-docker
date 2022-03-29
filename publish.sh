@@ -2,6 +2,8 @@
 
 set -e
 
+docker buildx create --use
+
 REPOSITORY="ghcr.io/safetyculture"
 BASE_IMAGE="protoc"
 
