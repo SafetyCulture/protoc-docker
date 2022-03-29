@@ -3,36 +3,36 @@ default: help
 
 .PHONY: protoc
 protoc: ## Builds the protoc docker container and pushes to the registry
-	$(call push-multiarch,protoc)
+	$(call build,protoc)
 
 .PHONY: cpp
 cpp: ## Builds the protoc docker container for `cpp`
-	$(call push-multiarch,protoc-cpp)
+	$(call build,protoc-cpp)
 
 .PHONY: go
 go: ## Builds the protoc docker container for `go`
-	$(call push-multiarch,protoc-go)
+	$(call build,protoc-go)
 
 .PHONY: java
 java: ## Builds the protoc docker container for `java`
-	$(call push-multiarch,protoc-java)
+	$(call build,protoc-java)
 
 .PHONY: node
 node: ## Builds the protoc docker container for `node`
-	$(call push-multiarch,protoc-node)
+	$(call build,protoc-node)
 
 .PHONY: swift
 swift: ## Builds the protoc docker container for `swift`
-	$(call push-multiarch,protoc-swift)
+	$(call build,protoc-swift)
 
 .PHONY: web
 web: ## Builds the protoc docker container for `web`
-	$(call push-multiarch,protoc-web)
+	$(call build,protoc-web)
 
-REGISTRY=safetyculture
+REGISTRY=ghcr.io/safetyculture
 
-.PHONY: push-multiarch
-push-multiarch = echo "Building and pushing multi-arch docker container for $(1)"; docker buildx build --platform linux/amd64,linux/arm64 --push -t $(REGISTRY)/$(1):$(shell cat $(1)/version.txt) ./$(1)
+.PHONY: build
+build = echo "Building Docker container $(1)"; docker build --no-cache -t $(REGISTRY)/$(1):$(shell cat $(1)/version.txt) ./$(1)
 
 .PHONY: buildAll
 buildAll: cpp go java node swift web ## Generates the protoc docker containers for all the supported languages
