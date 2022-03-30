@@ -3,7 +3,7 @@ default: help
 
 .PHONY: protoc
 protoc: ## Builds the protoc docker container and pushes to the registry
-	$(call build_force_x86,protoc)
+	$(call build,protoc)
 
 .PHONY: cpp
 cpp: ## Builds the protoc docker container for `cpp`
@@ -15,7 +15,7 @@ go: ## Builds the protoc docker container for `go`
 
 .PHONY: java
 java: ## Builds the protoc docker container for `java`
-	$(call build_force_x86,protoc-java)
+	$(call build,protoc-java)
 
 .PHONY: node
 node: ## Builds the protoc docker container for `node`
@@ -33,9 +33,6 @@ REGISTRY=ghcr.io/safetyculture
 
 .PHONY: build
 build = echo "Building Docker container $(1)"; docker build --no-cache -t $(REGISTRY)/$(1):$(shell cat $(1)/version.txt) ./$(1)
-
-.PHONY: build_force_x86
-build_force_x86 = echo "Building Docker container $(1)"; docker buildx build --platform linux/amd64 --no-cache -t $(REGISTRY)/$(1):$(shell cat $(1)/version.txt) ./$(1)
 
 .PHONY: buildAll
 buildAll: cpp go java node swift web ## Generates the protoc docker containers for all the supported languages
