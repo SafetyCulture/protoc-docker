@@ -13,7 +13,7 @@ RUN find /protoc-gen-javalite/ -name 'lib*.so*' -exec patchelf --set-rpath /prot
         patchelf --set-interpreter /protoc-gen-javalite/ld-linux-x86-64.so.2 --set-rpath /protoc-gen-javalite /protoc-gen-javalite/${p}; \
     done
 
-FROM safetyculture/protoc:1.1.0
+FROM ghcr.io/safetyculture/protoc:1.12.0
 LABEL maintainer="SafetyCulture <info@safetyculture.io>"
 
 ENV GRPC_JAVA_VERSION=1.13.1

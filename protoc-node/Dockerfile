@@ -1,8 +1,6 @@
-FROM safetyculture/protoc:1.4.0
+FROM ghcr.io/safetyculture/protoc:1.12.0
 LABEL maintainer="SafetyCulture <info@safetyculture.io>"
 
-ENV GRPC_RELEASE 1.20.1
+RUN apk add --no-cache npm
 
-# install dependencies
-ADD . /src
-RUN /src/build.sh
+RUN npm install -g ts-protoc-gen
