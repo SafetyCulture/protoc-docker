@@ -10,7 +10,7 @@ mkdir -p /usr/local/grpc
 git clone https://github.com/grpc/grpc-swift /usr/local/grpc
 cd /usr/local/grpc
 git checkout $GRPC_RELEASE
-make plugin
+make plugins
 
 mkdir -p /plugins
 cp /usr/local/grpc/protoc-gen-swift /usr/local/grpc/protoc-gen-grpc-swift /plugins

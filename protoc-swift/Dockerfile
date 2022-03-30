@@ -1,12 +1,11 @@
-FROM swift:5.1 as swift_builder
+FROM swift:5.2 as swift_builder
 
-ENV GRPC_RELEASE=1.0.0-alpha.9
+ENV GRPC_RELEASE=1.7.3
 
 ADD . /src
 RUN /src/build.sh
 
-
-FROM safetyculture/protoc:1.4.0
+FROM ghcr.io/safetyculture/protoc:1.12.0
 LABEL maintainer="SafetyCulture <info@safetyculture.io>"
 
 COPY --from=swift_builder /plugins /plugins
