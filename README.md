@@ -46,7 +46,7 @@ If `Create release tag` is unselected the image will be tagged with `${version}-
 
 ![docs/example.png](docs/example.png)
 
-Alternatively you can manaully build and publish these images by running the following make commands.
+Alternatively you can manually build and publish these images by running the following make commands.
 
 ```txt
 buildAll       Generates all the protoc docker containers
