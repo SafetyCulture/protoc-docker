@@ -15,4 +15,3 @@ go install github.com/SafetyCulture/protoc-gen-ratelimit/cmd/protoc-gen-ratelimi
 go install github.com/SafetyCulture/protoc-gen-workato/cmd/protoc-gen-workato@latest
 
 go install github.com/pseudomuto/protoc-gen-doc/cmd/protoc-gen-doc@latest
-
