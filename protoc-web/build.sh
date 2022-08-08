@@ -3,7 +3,7 @@
 set -e
 
 apk add --no-cache libstdc++
-apk add --no-cache --virtual .build git openssl binutils-gold g++ gcc gnupg libgcc linux-headers make cmake python autoconf automake libtool
+apk add --no-cache --virtual .build protobuf-dev libprotobuf libprotoc git openssl binutils-gold g++ gcc gnupg libgcc linux-headers make cmake autoconf automake libtool
 
 # Install the protoc-gen-grpc-web
 mkdir -p /usr/local/grpc-web

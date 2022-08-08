@@ -1,48 +1,41 @@
 .PHONY: default
 default: help
 
+.PHONY: protoc
+protoc: ## Builds the protoc docker container and pushes to the registry
+	$(call build,protoc)
+
 .PHONY: cpp
 cpp: ## Builds the protoc docker container for `cpp`
-	$(call build,cpp)
+	$(call build,protoc-cpp)
 
 .PHONY: go
 go: ## Builds the protoc docker container for `go`
-	$(call build,go)
+	$(call build,protoc-go)
 
 .PHONY: java
 java: ## Builds the protoc docker container for `java`
-	$(call build,java)
+	$(call build,protoc-java)
 
 .PHONY: node
 node: ## Builds the protoc docker container for `node`
-	$(call build,node)
+	$(call build,protoc-node)
 
 .PHONY: swift
 swift: ## Builds the protoc docker container for `swift`
-	$(call build,swift)
+	$(call build,protoc-swift)
 
 .PHONY: web
 web: ## Builds the protoc docker container for `web`
-	$(call build,web)
+	$(call build,protoc-web)
 
-REGISTRY=safetyculture
-BASE_IMAGE=protoc
+REGISTRY=ghcr.io/safetyculture
 
 .PHONY: build
-build = echo "Building Docker container $(1)"; docker build -t $(REGISTRY)/$(BASE_IMAGE)-$(1):$(shell cat $(1)/version.txt) ./$(1)
-
-.PHONY: push
-push: ## Push the generated docker image to SC docker repository
-	echo "Push the Docker image for $(language)"; docker push $(REGISTRY)/$(BASE_IMAGE)-$(language):$(shell cat $(language)/version.txt)
+build = echo "Building Docker container $(1)"; docker build --no-cache -t $(REGISTRY)/$(1):$(shell cat $(1)/version.txt) ./$(1)
 
 .PHONY: buildAll
 buildAll: cpp go java node swift web ## Generates the protoc docker containers for all the supported languages
-
-.PHONY: protoc
-PROTOC_TAG=$(shell cat version.txt)
-protoc: ## Builds the protoc docker container
-	echo "Building Docker container $(1)"
-	docker build -t $(REGISTRY)/$(BASE_IMAGE):$(PROTOC_TAG) .
 
 .PHONY: help
 help:

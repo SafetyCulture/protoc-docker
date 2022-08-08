@@ -2,7 +2,7 @@
 
 set -e
 
-apk add --no-cache --virtual .build g++
+apk add --no-cache --virtual .build protobuf-dev libprotobuf libprotoc g++ curl
 
 # Install the protoc-gen-grpc-java plugin
 mkdir -p /usr/local/grpc
