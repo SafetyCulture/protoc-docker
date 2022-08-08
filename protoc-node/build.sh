@@ -14,8 +14,7 @@ git submodule update --init
 make grpc_node_plugin
 mv /usr/local/grpc/bins/opt/grpc_node_plugin  /usr/local/bin/grpc_node_plugin
 
-npm install -g ts-protoc-gen
-npm install @bufbuild/protoc-gen-es @bufbuild/protoc-gen-connect-web
+npm install -g ts-protoc-gen @bufbuild/protoc-gen-es @bufbuild/protoc-gen-connect-web
 
 apk del .build
 rm -rf /usr/local/grpc
