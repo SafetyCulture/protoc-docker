@@ -29,13 +29,17 @@ swift: ## Builds the protoc docker container for `swift`
 web: ## Builds the protoc docker container for `web`
 	$(call build,protoc-web)
 
+.PHONY: dotnet
+dotnet: ## Builds the protoc docker container for `dotnet`
+	$(call build,protoc-dotnet)
+
 REGISTRY=ghcr.io/safetyculture
 
 .PHONY: build
 build = echo "Building Docker container $(1)"; docker build --no-cache -t $(REGISTRY)/$(1):$(shell cat $(1)/version.txt) ./$(1)
 
 .PHONY: buildAll
-buildAll: cpp go java node swift web ## Generates the protoc docker containers for all the supported languages
+buildAll: cpp go java node swift web dotnet ## Generates the protoc docker containers for all the supported languages
 
 .PHONY: help
 help:

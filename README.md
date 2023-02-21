@@ -8,6 +8,7 @@ There are a number of images published for different language support
 
 - `ghcr.io/safetyculture/protoc`
 - `ghcr.io/safetyculture/protoc-cpp`
+- `ghcr.io/safetyculture/protoc-dotnet`
 - `ghcr.io/safetyculture/protoc-go`
 - `ghcr.io/safetyculture/protoc-java`
 - `ghcr.io/safetyculture/protoc-node`
@@ -51,6 +52,7 @@ Alternatively you can manually build and publish these images by running the fol
 ```txt
 buildAll       Generates all the protoc docker containers
 cpp            Builds the protoc docker container for `cpp`
+dotnet         Builds the protoc docker container for `dotnet`
 go             Builds the protoc docker container for `go`
 java           Builds the protoc docker container for `java`
 node           Builds the protoc docker container for `node`
