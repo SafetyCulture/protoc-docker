@@ -3,4 +3,4 @@ LABEL maintainer="SafetyCulture <info@safetyculture.io>"
 
 RUN apk add --no-cache npm
 
-RUN npm install -g ts-protoc-gen @bufbuild/protoc-gen-es @bufbuild/protoc-gen-connect-web
+RUN npm install -g ts-protoc-gen @bufbuild/protoc-gen-es @bufbuild/protoc-gen-connect-es
