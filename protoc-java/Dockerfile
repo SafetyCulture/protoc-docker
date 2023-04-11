@@ -1,7 +1,7 @@
 FROM ubuntu:16.04 as javalite_builder
 RUN apt-get update && \
     apt-get install -y bash patch curl patchelf
-ENV PROTOC_GEN_JAVALITE_VERSION=3.0.0
+ENV PROTOC_GEN_JAVALITE_VERSION=3.8.0
 RUN mkdir -p /protoc-gen-javalite && \
     curl -L https://repo1.maven.org/maven2/com/google/protobuf/protoc-gen-javalite/${PROTOC_GEN_JAVALITE_VERSION}/protoc-gen-javalite-${PROTOC_GEN_JAVALITE_VERSION}-linux-x86_64.exe > /protoc-gen-javalite/protoc-gen-javalite && \
     chmod 755 /protoc-gen-javalite/protoc-gen-javalite
