@@ -1,5 +1,7 @@
 FROM golang:1.18.0-alpine as builder
 
+ENV S12_PROTO_VERSION 1.28.0
+
 # install dependencies and build/install Go
 ADD . /src
 RUN /src/build.sh
