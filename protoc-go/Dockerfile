@@ -6,7 +6,7 @@ ENV S12_PROTO_VERSION 1.30.0
 ADD . /src
 RUN /src/build.sh
 
-FROM ghcr.io/safetyculture/protoc:1.12.0
+FROM ghcr.io/safetyculture/protoc:1.12.1
 LABEL maintainer="SafetyCulture <info@safetyculture.io>"
 
 ENV S12_PROTO_VERSION 1.30.0
