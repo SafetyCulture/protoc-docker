@@ -12,6 +12,7 @@ go install github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-openapiv2@latest
 go install github.com/SafetyCulture/s12-proto/protobuf/protoc-gen-govalidator@v$S12_PROTO_VERSION
 go install github.com/SafetyCulture/s12-proto/protobuf/protoc-gen-s12perm@v$S12_PROTO_VERSION
 go install github.com/SafetyCulture/protoc-gen-ratelimit/cmd/protoc-gen-ratelimit@latest
+
 go install github.com/SafetyCulture/protoc-gen-workato/cmd/protoc-gen-workato@latest
 
 go install github.com/pseudomuto/protoc-gen-doc/cmd/protoc-gen-doc@latest
