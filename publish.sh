@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e
+set -o errexit
 
 REPOSITORY="ghcr.io/safetyculture"
 PLATFORM="linux/amd64,linux/arm64"
