@@ -1,6 +1,7 @@
 # yamllint disable rule:line-length
 ---
 name: Build protoc
+run-name: Build ${{ github.event.inputs.image }} with release tag ${{ github.event.inputs.release_tag }}
 
 # yamllint disable-line rule:truthy
 on:
