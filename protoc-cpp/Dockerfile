@@ -1,7 +1,7 @@
 FROM ghcr.io/safetyculture/protoc:1.13.0
 LABEL maintainer="SafetyCulture <info@safetyculture.io>"
 
-ENV CRUX_CLIENT_RELEASE 1.26.2
+ENV CRUX_CLIENT_RELEASE 1.30.0
 
 # install dependencies and build/install grpc plugin
 ADD . /src
