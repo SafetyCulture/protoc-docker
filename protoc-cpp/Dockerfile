@@ -1,4 +1,4 @@
-FROM ghcr.io/safetyculture/protoc:1.13.0
+FROM ghcr.io/safetyculture/protoc:1.14.0
 LABEL maintainer="SafetyCulture <info@safetyculture.io>"
 
 ENV CRUX_CLIENT_RELEASE 1.30.0
