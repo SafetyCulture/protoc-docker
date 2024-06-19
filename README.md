@@ -24,7 +24,7 @@ docker run \
 	-u $(UID) \
 	-w /protos \
 	--entrypoint "protoc" \
-	ghcr.io/safetyculture/protoc-go:1.14.0 \
+	ghcr.io/safetyculture/protoc-go:1.14.1 \
 	-Iprotos -Ithird_party \
 	--go_out $(GO_OUT_DIR)/ \
 	--go-grpc_out $(GO_OUT_DIR)/ \
