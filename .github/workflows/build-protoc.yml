@@ -9,13 +9,12 @@ on:
 jobs:
   protoc:
     runs-on: ubuntu-latest
-    concurrency:
-      # ensure protoc is built first
-      group: ${{ github.run_id }}
     permissions:
       packages: write
       contents: write
     strategy:
+      # ensure protoc is built first
+      max-parallel: 1
       matrix:
         image:
           - protoc
