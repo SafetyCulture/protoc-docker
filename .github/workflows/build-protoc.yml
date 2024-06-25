@@ -9,12 +9,16 @@ on:
 jobs:
   protoc:
     runs-on: ubuntu-latest
+    concurrency:
+      # ensure protoc is built first
+      group: ${{ github.run_id }}
     permissions:
       packages: write
       contents: write
     strategy:
       matrix:
         image:
+          - protoc
           - protoc-cpp
           - protoc-go
           - protoc-java
@@ -38,11 +42,6 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-
-      - run: ./publish.sh
-        env:
-          RELEASE_TAG: ${{ github.ref_name == github.event.repository.default_branch }}
-          IMAGE: protoc
 
       - run: ./publish.sh
         env:
