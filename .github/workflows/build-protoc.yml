@@ -1,10 +1,10 @@
-# yamllint disable rule:line-length
 ---
 name: Build protoc
 run-name: Build protoc
 
-# yamllint disable-line rule:truthy
-on: push
+on:
+  push:
+  workflow_call:
 
 jobs:
   protoc:
