@@ -1,6 +1,6 @@
 FROM golang:1.22.0-alpine as builder
 
-ENV S12_PROTO_VERSION v1.32.1-pre
+ENV S12_PROTO_VERSION 1.32.1-pre
 
 # install dependencies and build/install Go
 ADD . /src
