@@ -1,5 +1,6 @@
 FROM golang:1.18.0-alpine as builder
 
+ENV GRPC_GATEWAY_VERSION 2.20.0
 ENV S12_PROTO_VERSION 1.31.0
 
 # install dependencies and build/install Go
