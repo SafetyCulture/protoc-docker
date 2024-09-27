@@ -1,6 +1,7 @@
 FROM golang:1.18.0-alpine as builder
 
-ENV S12_PROTO_VERSION 1.31.0
+#TODO @sc-lachlanrobertson: This is a tempoary item so I can test whether anything works!
+ENV S12_PROTO_VERSION v1.32.1-0.20240926061402-edb34dfc0939
 
 ENV PROTOC_GEN_GO_VERSION 1.34.1
 ENV PROTOC_GEN_DOC_VERSION 1.5.1
