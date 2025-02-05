@@ -40,9 +40,10 @@ docker run \
 ## Building
 
 1. update the version in xxx/version.txt. This version will be used to tag the new docker image.
-1. update the relevant version info in the Dockerfile for the respective language.
-1. trigger a new build https://github.com/SafetyCulture/protoc-docker/actions/workflows/build-protoc.yml and select the image you want to build.
+2. update the relevant version info in the Dockerfile for the respective language.
+3. trigger a new build https://github.com/SafetyCulture/protoc-docker/actions/workflows/build-protoc.yml and select the image you want to build.
 If `Create release tag` is unselected the image will be tagged with `${version}-pre#{datetime}`.
+4. NOTE THE `protoc-go` action job can take 12 minutes 🤬
 
 ![docs/example.png](docs/example.png)
 
