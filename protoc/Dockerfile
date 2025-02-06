@@ -1,10 +1,10 @@
-FROM alpine:3.15
+FROM alpine:3.21
 LABEL maintainer="SafetyCulture <info@safetyculture.io>"
 
 RUN apk add --no-cache protoc grpc
 RUN mkdir /defs
 
-COPY --from=bufbuild/buf:1.8.0 /usr/local/bin/buf /usr/local/bin/buf
+COPY --from=bufbuild/buf:1.50.0 /usr/local/bin/buf /usr/local/bin/buf
 
 # Setup directories for the volumes that should be used
 WORKDIR /defs
