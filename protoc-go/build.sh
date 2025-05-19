@@ -8,6 +8,7 @@ go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@v${PROTOC_GEN_GO_GRPC_V
 go install github.com/planetscale/vtprotobuf/cmd/protoc-gen-go-vtproto@v${PROTOC_GEN_GO_VTPROTO_VERSION}
 go install github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-grpc-gateway@v${PROTOC_GEN_GRPC_GATEWAY_VERSION}
 go install github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-openapiv2@v${PROTOC_GEN_GRPC_GATEWAY_VERSION}
+go install github.com/redpanda-data/protoc-gen-go-mcp/cmd/protoc-gen-go-mcp@latest@latest
 
 go install github.com/SafetyCulture/protoc-gen-ratelimit/cmd/protoc-gen-ratelimit@latest
 go install github.com/SafetyCulture/protoc-gen-workato/cmd/protoc-gen-workato@latest
