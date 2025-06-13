@@ -1,6 +1,11 @@
 .PHONY: default
 default: help
 
+.PHONY: local-cpp
+local-cpp: ## Builds the protoc-cpp docker using s12-proto checked out in parent directory of protoc-docker
+	@echo "🛠️ Building protoc-cpp:local"
+	docker build -t protoc-cpp:local protoc-cpp
+
 .PHONY: protoc
 protoc: ## Builds the protoc docker container and pushes to the registry
 	$(call build,protoc)

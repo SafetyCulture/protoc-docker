@@ -1,0 +1,3 @@
+[submodule "protoc-cpp/s12-proto"]
+	path = protoc-cpp/s12-proto
+	url = git@github.com:SafetyCulture/s12-proto
