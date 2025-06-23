@@ -12,7 +12,7 @@ ENV PROTOC_GEN_GRPC_GATEWAY_VERSION 2.20.0
 ADD . /src
 RUN /src/build.sh
 
-FROM ghcr.io/safetyculture/protoc:1.14.1
+FROM ghcr.io/safetyculture/protoc:1.14.2
 LABEL maintainer="SafetyCulture <info@safetyculture.io>"
 
 ENV PATH /usr/local/go/bin:$PATH
