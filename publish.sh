@@ -13,7 +13,7 @@ if [ "$RELEASE_TAG" != "true" ]; then
 fi
 
 # These images are incompatible with arm64
-if [ "$IMAGE" == "protoc-java" ] || [ "$IMAGE" == "protoc-swift" ]; then
+if [ "$IMAGE" == "protoc-swift" ]; then
 	PLATFORM="linux/amd64"
 fi
 
