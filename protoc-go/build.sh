@@ -13,3 +13,4 @@ go install github.com/SafetyCulture/protoc-gen-ratelimit/cmd/protoc-gen-ratelimi
 go install github.com/SafetyCulture/protoc-gen-workato/cmd/protoc-gen-workato@latest
 go install github.com/SafetyCulture/s12-proto/protobuf/protoc-gen-govalidator@v${S12_PROTO_VERSION}
 go install github.com/SafetyCulture/s12-proto/protobuf/protoc-gen-s12perm@v${S12_PROTO_VERSION}
+go install github.com/bufbuild/protovalidate-go/cmd/protoc-gen-go-protovalidate@v${PROTOVALIDATE_GO_VERSION}
