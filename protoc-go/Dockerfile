@@ -1,5 +1,7 @@
 FROM golang:1.24.0-alpine as builder
 
+RUN apk add --no-cache git
+
 ENV S12_PROTO_VERSION 1.37.0
 
 ENV PROTOC_GEN_GO_VERSION 1.34.1
