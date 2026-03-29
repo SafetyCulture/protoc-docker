@@ -8,7 +8,7 @@ PLATFORM="linux/amd64,linux/arm64"
 VERSION_FILE="$IMAGE/version.txt"
 
 TAG=`cat $VERSION_FILE`
-if [ "$RELEASE_TAG" != "true" ] && [ "$IMAGE" != "protoc" ] && [ "$IMAGE" != "protoc-cpp" ]; then
+if [ "$RELEASE_TAG" != "true" ]; then
 	TAG="$TAG-pre$(date +%Y%m%d%H%M%S)"
 fi
 
