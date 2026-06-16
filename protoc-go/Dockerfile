@@ -1,4 +1,4 @@
-FROM golang:1.24.0-alpine as builder
+FROM golang:1.26.4-alpine as builder
 
 ENV S12_PROTO_VERSION 1.39.0
 
