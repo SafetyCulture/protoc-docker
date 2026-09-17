@@ -1,0 +1,40 @@
+# protoc-toolchain manifest
+#
+# One tarball per arch: protoc-toolchain_<VER>_linux_<arch>.tar.gz
+# published to s3://mitti-bk-tools-production-build-us-east-1/release/protoc-toolchain/v<VER>/
+# Consumed by mise's `s3:` backend (extracts, puts bin/ on PATH).
+#
+# Layout: bin/ (executables on PATH) + lib/ (bundled runtime libs resolved
+# via DT_RUNPATH=$ORIGIN/../lib; swift tree under lib/swift/plugins).
+#
+# bin/ contents by arch:
+#
+#   binary                  amd64   arm64   notes
+#   ---------------------   -----   -----   ------------------------------------
+#   protoc                  yes     yes     protoc 26.1 (static); codegen + builtin
+#                                          generators (cpp, java, objc via --objc_out)
+#   protoc-system           yes     yes     protoc 24.4 (real file behind the
+#                                          /usr/bin/protoc-system symlink)
+#   grpc_cpp_plugin         yes     yes     buf `grpc-cpp` plugin (buf.gen.crux.yaml)
+#   protoc-gen-cruxclient   yes     yes     buf `cruxclient` plugin
+#   protoc-gen-grpc-java    yes     yes     java grpc plugin
+#   protoc-gen-grpc-web     yes     yes     web grpc plugin
+#   protoc-gen-swift        yes     no      wrapper; glibc 2.27 plugin (swift:5.2
+#                                          is amd64-only). See note (a).
+#   protoc-gen-grpc-swift   yes     no      wrapper; glibc 2.27 plugin. See note (a).
+#   ptc-patchelf            yes     no      helper used once per install by the
+#                                          swift wrappers to fix PT_INTERP.
+#
+# protoc-gen-objc is intentionally absent: buf's `- name: objc` (no path) maps
+# to protoc's builtin --objc_out generator, so it is covered by `protoc`.
+# Alpine's grpc_objective_c_plugin is a different (grpc) plugin, unused here.
+#
+# protoc-node is excluded: it produces npm-installed JS plugins, not ELF
+# binaries, and stays npm-delivered.
+#
+# (a) Swift plugins are glibc binaries with a bundled loader + libs under
+#     lib/swift/plugins. Libs carry DT_RUNPATH=$ORIGIN. Because PT_INTERP must
+#     be absolute and the glibc 2.27 ld.so CLI injects a spurious argv[1] that
+#     protoc-gen-swift rejects, each bin/ wrapper performs a one-time
+#     idempotent `ptc-patchelf --set-interpreter <abs bundled loader>` then
+#     execs the plugin directly.
