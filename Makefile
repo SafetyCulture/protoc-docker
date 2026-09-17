@@ -46,7 +46,7 @@ ARCHES ?= amd64 arm64
 toolchain: ## Builds + publishes the protoc-toolchain tarball(s) to S3 (VER, ARCHES)
 	@for arch in $(ARCHES); do \
 		echo "==> toolchain $$arch (v$(VER))"; \
-		bash toolchain/publish.sh "$(VER)" "$$arch"; \
+		bash toolchain/publish.sh "$(VER)" "$$arch" || exit 1; \
 	done
 
 .PHONY: toolchain-build

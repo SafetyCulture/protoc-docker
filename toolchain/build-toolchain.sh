@@ -55,7 +55,7 @@ need tar
 # Makefile does.
 build_image() { # build_image <tag> <dir>
   echo "==> docker build (linux/${ARCH}) $1 <- $2"
-  docker build --platform "linux/${ARCH}" -t "$1" "$2" >/dev/null
+  docker build --pull --platform "linux/${ARCH}" -t "$1" "$2" >/dev/null
 }
 build_image "ptc-base-${ARCH}"  protoc/
 build_image "ptc-cpp-${ARCH}"   protoc-cpp/

@@ -38,3 +38,12 @@
 #     protoc-gen-swift rejects, each bin/ wrapper performs a one-time
 #     idempotent `ptc-patchelf --set-interpreter <abs bundled loader>` then
 #     execs the plugin directly.
+#
+# ARCH CONSTRAINT (Swift codegen is amd64-only):
+#   The arm64 toolchain ships NO protoc-gen-swift / protoc-gen-grpc-swift,
+#   because the upstream swift:5.2 image is amd64-only. Consumers that need
+#   Swift codegen - e.g. APISchema's "Publish to s12-apis-swift" pipeline
+#   step - MUST run on amd64 agents (Buildkite `resource_class: *_amd64` or
+#   equivalent); the arm64 toolchain cannot generate Swift. Downstream
+#   pipeline/mise tasks that consume this toolchain should pin any
+#   Swift-generating step to amd64.

@@ -14,6 +14,11 @@ set -euo pipefail
 # write the tools bucket. Run once per arch (the script is arch-specific).
 VER="${1:?version e.g. 1.0.0}"
 ARCH="${2:?amd64|arm64}"
+# Arch constraint: the arm64 toolchain ships NO protoc-gen-swift /
+# protoc-gen-grpc-swift (swift:5.2 is amd64-only). Consumers needing Swift
+# codegen (e.g. APISchema's "Publish to s12-apis-swift" step) must run on
+# amd64 agents / resource_class: *_amd64; the arm64 toolchain cannot
+# generate Swift. See toolchain/manifest.txt.
 case "$ARCH" in
   amd64|arm64) ;;
   *) echo "unsupported arch: $ARCH (want amd64|arm64)" >&2; exit 1 ;;
