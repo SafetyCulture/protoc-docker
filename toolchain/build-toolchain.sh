@@ -127,9 +127,9 @@ rm -rf "$OUT/lib/base-libs"; mv "$OUT/lib/.staged-libs" "$OUT/lib/base-libs"
 # Merge every staged lib dir into lib/ proper (basename collisions keep
 # the first copy; the dirs only overlap in generic libs like libz).
 for d in pb29-libs web-libs base-libs; do
-  [ -d "$OUT/lib/$d" ] || continue
+  [ -d "${OUT:?}/lib/$d" ] || continue
   cp -a "$OUT/lib/$d/." "$OUT/lib/" 2>/dev/null || cp -R "$OUT/lib/$d/." "$OUT/lib/"
-  rm -rf "$OUT/lib/$d"
+  rm -rf "${OUT:?}/lib/$d"
 done
 
 # Swift plugins: glibc binaries (swift:5.2, glibc 2.27). The CI step image is
